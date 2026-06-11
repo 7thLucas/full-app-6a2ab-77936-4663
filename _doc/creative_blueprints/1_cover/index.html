@@ -1,0 +1,53 @@
+<style>
+.mode-landscape .sl-layout { flex-direction: row; }
+.mode-portrait .sl-layout { flex-direction: column; }
+.mode-landscape .sl-left { width: 50%; }
+.mode-portrait .sl-left { width: 100%; flex: 1; }
+.mode-landscape .sl-right { width: 50%; }
+.mode-portrait .sl-right { width: 100%; height: 42%; }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: Content column -->
+    <div class="sl-left flex flex-col justify-between p-12 bg-white">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-cyan-500 uppercase mb-8">NovaSphere Ecosystem · Private OS</p>
+        <h1 class="text-4xl font-black text-slate-900 leading-tight mb-5">
+          One Command<br/>Center. Every<br/>Asset. Zero Chaos.
+        </h1>
+        <p class="text-sm text-slate-500 leading-relaxed" style="max-width:22rem">
+          The private operating system and single source of truth for the entire NovaSphere ecosystem — 15 blockchains, 10+ projects, 15 token white papers, and every wallet, document, and AI agent, unified in one place.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">15 Blockchains</span>
+          <span class="bg-cyan-50 text-cyan-700 text-xs font-semibold px-3 py-1 rounded-full">10+ Projects</span>
+          <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">15 Token Papers</span>
+          <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">AI-Powered</span>
+        </div>
+        <data-attribution />
+      </div>
+    </div>
+
+    <!-- Right: Visual panel -->
+    <div class="sl-right relative overflow-hidden bg-slate-900">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=sleek%20futuristic%20dark%20blockchain%20command%20center%20dashboard%2C%20multiple%20glowing%20data%20panels%20with%20cyan%20and%20amber%20accents%2C%20deep%20navy%20background%2C%20holographic%20grid%20lines%2C%20professional%20tech%20interface%2C%20ultra-clean%20dark%20UI%20aesthetic"
+        class="w-full h-full object-cover"
+        style="opacity:0.72"
+        alt="NovaStack Command Center"
+      />
+      <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(15,23,42,0.35) 0%,rgba(6,182,212,0.08) 100%)"></div>
+
+      <!-- Floating stat chip -->
+      <div class="absolute bottom-8 right-8 bg-white rounded-xl p-4 shadow-xl" style="opacity:0.95">
+        <p class="text-slate-500 text-xs font-medium mb-0.5">Connected Modules</p>
+        <p class="text-slate-900 text-2xl font-black">18+</p>
+      </div>
+    </div>
+
+  </div>
+</section>
