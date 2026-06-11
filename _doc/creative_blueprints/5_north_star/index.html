@@ -1,0 +1,109 @@
+<style>
+.mode-landscape .sl-body { flex-direction: row; gap: 1.5rem; }
+.mode-portrait .sl-body { flex-direction: column; gap: 1rem; }
+.mode-landscape .sl-left { width: 54%; }
+.mode-portrait .sl-left { width: 100%; }
+.mode-landscape .sl-right { width: 46%; }
+.mode-portrait .sl-right { width: 100%; }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="p-10 h-full flex flex-col">
+
+    <!-- Header -->
+    <div class="mb-4">
+      <div class="flex items-center gap-3 mb-1">
+        <p class="text-xs font-bold tracking-widest text-cyan-500 uppercase">North Star Metric</p>
+        <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded-full">Projected impact — based on your inputs</span>
+      </div>
+      <h2 class="text-2xl font-black text-slate-900">Weekly Verified Operations (WVO)</h2>
+    </div>
+
+    <div class="sl-body flex flex-1">
+
+      <!-- Left: Definition + Volume formula -->
+      <div class="sl-left flex flex-col gap-3">
+
+        <!-- What counts -->
+        <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+          <h3 class="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">What counts as a Verified Operation</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-3">
+            An <strong class="text-slate-700">Ecosystem Management Action (EMA)</strong> — any record created, updated, or archived in the Command Center: a project updated, a blockchain metric logged, a task closed, a white paper versioned, a wallet transaction recorded, a document filed, or a relationship linked.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-0.5 rounded-full">Record Created</span>
+            <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-0.5 rounded-full">Task Closed</span>
+            <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-0.5 rounded-full">Document Filed</span>
+            <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-0.5 rounded-full">White Paper Versioned</span>
+            <span class="bg-cyan-50 text-cyan-700 text-xs px-2 py-0.5 rounded-full">Relationship Linked</span>
+          </div>
+        </div>
+
+        <!-- Volume formula -->
+        <div class="bg-slate-900 rounded-xl p-4 flex-1">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Volume Formula</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="bg-amber-400 bg-opacity-20 text-amber-300 text-xs px-2 py-0.5 rounded-full font-medium flex-shrink-0">Assumption — adjust this</span>
+              <p class="text-slate-300">20 ecosystem actions per day</p>
+            </div>
+            <div class="flex items-center gap-2 pl-1">
+              <span class="text-slate-500 font-bold">×</span>
+              <p class="text-slate-300">7 days per week</p>
+            </div>
+            <div class="flex items-center gap-2 pl-1">
+              <span class="text-slate-500 font-bold">×</span>
+              <p class="text-slate-300">1 owner (stated)</p>
+            </div>
+          </div>
+          <div class="border-t border-slate-700 mt-3 pt-3">
+            <p class="text-slate-400 text-xs mb-0.5">= weekly verified operations</p>
+            <p class="text-white font-black text-xl"><span class="text-cyan-400">140 operations / week</span></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Value per op + totals -->
+      <div class="sl-right flex flex-col gap-3">
+
+        <!-- Value per operation -->
+        <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+          <h3 class="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Value Per Operation</h3>
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2 text-xs">
+              <span class="bg-amber-50 text-amber-600 px-1.5 py-0.5 rounded text-xs font-medium flex-shrink-0">Assumption</span>
+              <p class="text-slate-500">8 min saved per operation vs. scattered tools</p>
+            </div>
+            <div class="flex items-center gap-2 text-xs">
+              <span class="bg-amber-50 text-amber-600 px-1.5 py-0.5 rounded text-xs font-medium flex-shrink-0">Assumption</span>
+              <p class="text-slate-500">$150 / hr owner time value</p>
+            </div>
+            <div class="border-t border-slate-100 pt-2 mt-1">
+              <p class="text-xs text-slate-400">8 min × ($150 ÷ 60 min)</p>
+              <p class="text-slate-900 font-bold text-base">= $20 per operation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projected totals -->
+        <div class="bg-slate-900 rounded-xl p-5 flex-1 flex flex-col justify-center">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-4">Projected Total Value</h3>
+
+          <div class="space-y-4">
+            <div>
+              <p class="text-slate-500 text-xs mb-0.5">140 ops × $20 / op</p>
+              <p class="text-white font-black text-2xl">$2,800 / week</p>
+            </div>
+            <div class="border-t border-slate-700 pt-3">
+              <p class="text-slate-500 text-xs mb-0.5">$2,800 × 52 weeks</p>
+              <p class="text-cyan-400 font-black text-3xl">$145,600 / year</p>
+              <p class="text-slate-500 text-xs mt-1">in recovered owner time value</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
