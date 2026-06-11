@@ -1,0 +1,79 @@
+<style>
+.mode-landscape .sl-zones { flex-direction: row; gap: 1.5rem; }
+.mode-portrait .sl-zones { flex-direction: column; gap: 1rem; }
+.mode-landscape .sl-zone { width: 50%; }
+.mode-portrait .sl-zone { width: 100%; flex: 1; }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="p-10 h-full flex flex-col">
+
+    <p class="text-xs font-bold tracking-widest text-cyan-500 uppercase mb-1">The Challenge &amp; The Answer</p>
+    <h2 class="text-2xl font-black text-slate-900 mb-5">Why the NovaSphere Ecosystem Needs a Command Center</h2>
+
+    <div class="sl-zones flex flex-1">
+
+      <!-- Problem -->
+      <div class="sl-zone flex flex-col">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+            <span class="text-red-500 text-xs font-bold">✕</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">The Problem</h3>
+        </div>
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 flex-1">
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">Managing a multi-blockchain ecosystem across scattered tools creates an impossible control problem:</p>
+          <div class="space-y-3">
+            <div class="flex gap-3">
+              <span class="text-red-300 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-600 leading-relaxed">15 blockchains, 10+ projects, and 15 white papers scattered across disconnected folders, spreadsheets, and apps — nothing links to anything</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-red-300 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-600 leading-relaxed">No global search — finding a blockchain's latest white paper or a wallet's transaction history means opening 5 different tools</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-red-300 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-600 leading-relaxed">No relationship graph — a token's white paper, blockchain, wallets, roadmap, and tasks exist in complete isolation from each other</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-red-300 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-600 leading-relaxed">No command view — the full operational state of NovaSphere is never visible in one place, on any device</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="sl-zone flex flex-col">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center flex-shrink-0">
+            <span class="text-cyan-600 text-xs font-bold">✓</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">The Solution</h3>
+        </div>
+        <div class="bg-slate-900 rounded-2xl p-5 flex-1">
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">NovaStack Command Center replaces the scattered stack with one unified OS — 18 modules, one PostgreSQL database, one search bar, every asset cross-linked:</p>
+          <div class="space-y-3">
+            <div class="flex gap-3">
+              <span class="text-cyan-400 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-300 leading-relaxed"><span class="text-white font-semibold">One database</span> — every entity in a single Supabase PostgreSQL store with full relationship mapping across all modules</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-cyan-400 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-300 leading-relaxed"><span class="text-white font-semibold">One search bar</span> — global full-text search across all 18 modules, returning name, type, status, relationships, and last updated</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-cyan-400 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-300 leading-relaxed"><span class="text-white font-semibold">Universal linking</span> — every blockchain leads to its tokens, wallets, white papers, and roadmaps; every project to repos, deployments, and AI agents</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-cyan-400 text-xs mt-0.5 flex-shrink-0">●</span>
+              <p class="text-xs text-slate-300 leading-relaxed"><span class="text-white font-semibold">NovaStack AI</span> — OpenAI-powered assistant that searches, summarizes, generates reports, and surfaces roadmap and task suggestions from your own data</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
