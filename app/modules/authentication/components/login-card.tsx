@@ -1,8 +1,9 @@
-import { Form, Link, useActionData, useNavigation } from "@remix-run/react";
+import { Form, Link, useActionData, useNavigation } from "react-router";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
+import { Sparkles, Shield } from "lucide-react";
 
 interface ActionData {
   error?: string;
@@ -15,65 +16,98 @@ export function LoginCard() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Sign in</CardTitle>
-          <CardDescription>Enter your email and password to access your account</CardDescription>
-        </CardHeader>
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-cyan-500/5 pointer-events-none" />
 
-        <Form method="post">
-          <CardContent className="space-y-4">
-            {actionData?.error && (
-              <div className="rounded-md bg-destructive/10 px-4 py-3 text-sm text-destructive">
-                {actionData.error}
+      <div className="relative w-full max-w-md">
+        {/* Brand header */}
+        <div className="text-center mb-8">
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 mb-4">
+            <Sparkles size={24} className="text-primary" />
+          </div>
+          <h1 className="text-2xl font-bold text-foreground">NovaStack</h1>
+          <p className="text-sm text-muted-foreground mt-1">Command Center</p>
+        </div>
+
+        <Card className="border-border bg-card shadow-2xl">
+          <CardHeader className="space-y-1 pb-4">
+            <CardTitle className="text-lg font-bold flex items-center gap-2">
+              <Shield size={16} className="text-primary" />
+              Sign in
+            </CardTitle>
+            <CardDescription className="text-xs">
+              Private access — NovaSphere ecosystem management
+            </CardDescription>
+          </CardHeader>
+
+          <Form method="post">
+            <CardContent className="space-y-4">
+              {actionData?.error && (
+                <div className="rounded-lg bg-destructive/10 border border-destructive/20 px-4 py-3 text-sm text-destructive">
+                  {actionData.error}
+                </div>
+              )}
+
+              <div className="space-y-1.5">
+                <Label htmlFor="email" className="text-xs text-muted-foreground uppercase tracking-wider">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@novasphere.tech"
+                  required
+                  autoComplete="email"
+                  className="h-10"
+                />
               </div>
-            )}
 
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-                required
-                autoComplete="email"
-              />
-            </div>
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password" className="text-xs text-muted-foreground uppercase tracking-wider">
+                    Password
+                  </Label>
+                  <Link
+                    to="/auth/forgot-password"
+                    className="text-xs text-primary hover:text-primary/80 transition-colors"
+                  >
+                    Forgot password?
+                  </Link>
+                </div>
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  autoComplete="current-password"
+                  className="h-10"
+                />
+              </div>
+            </CardContent>
 
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  to="/auth/forgot-password"
-                  className="text-xs text-muted-foreground underline-offset-4 hover:underline"
-                >
-                  Forgot password?
+            <CardFooter className="flex flex-col gap-3 pt-0">
+              <Button
+                type="submit"
+                className="w-full h-10"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Signing in..." : "Sign in to NovaStack"}
+              </Button>
+              <p className="text-center text-xs text-muted-foreground">
+                Don&apos;t have an account?{" "}
+                <Link to="/auth/register" className="text-primary hover:text-primary/80 transition-colors">
+                  Create one
                 </Link>
-              </div>
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                required
-                autoComplete="current-password"
-              />
-            </div>
-          </CardContent>
+              </p>
+            </CardFooter>
+          </Form>
+        </Card>
 
-          <CardFooter className="flex flex-col gap-4">
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Signing in…" : "Sign in"}
-            </Button>
-            <p className="text-center text-sm text-muted-foreground">
-              Don&apos;t have an account?{" "}
-              <Link to="/auth/register" className="font-medium underline underline-offset-4">
-                Create one
-              </Link>
-            </p>
-          </CardFooter>
-        </Form>
-      </Card>
+        <p className="text-center text-xs text-muted-foreground mt-6">
+          One Command Center. Every NovaSphere Asset. Zero Chaos.
+        </p>
+      </div>
     </div>
   );
 }
